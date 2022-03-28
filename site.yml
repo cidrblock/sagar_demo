@@ -1,0 +1,17 @@
+- hosts: localhost
+  gather_facts: false
+  vars:
+    ansible_network_os: cisco.ios.ios
+
+  tasks:
+  - name: Run the demo role action 1
+    ansible.builtin.include_role:
+      name: demo
+    vars:
+      action: action 1
+  
+  - name: Run the demo role build SOT
+    ansible.builtin.include_role:
+      name: demo
+    vars:
+      action: build source of truth
